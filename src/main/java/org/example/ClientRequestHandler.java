@@ -19,7 +19,7 @@ public class ClientRequestHandler implements Runnable{
 
     @Override
     public void run() {
-        logger.info("[ClientRequestHandler] new client() started.", Thread.currentThread().getName());
+        logger.info("[ClientRequestHandler] new client{} started.", Thread.currentThread().getName());
         try(InputStream in = clientSocket.getInputStream(); OutputStream out = clientSocket.getOutputStream()){
             BufferedReader br = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
             DataOutputStream dos = new DataOutputStream(out);
